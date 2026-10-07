@@ -193,6 +193,9 @@ def parse_args() -> argparse.Namespace:
 def main():
     args = parse_args()
 
+    if args.a <= 0 or args.b <= 0:
+        raise ValueError("a & b values must be positive")
+
     if args.benchmark:
         ITERS = 100000
 
